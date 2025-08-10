@@ -5,14 +5,14 @@ import sys
 import json
 from datetime import datetime
 
-# Initialize
+
 pygame.init()
 pygame.mixer.init()
 WIDTH, HEIGHT = 900, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Typing Ninja")
 
-# Colors
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BLUE = (0, 150, 255)
@@ -22,14 +22,13 @@ GRAY = (180, 180, 180)
 YELLOW = (255, 255, 0)
 
 
-# Fonts (bigger!)
 font_large = pygame.font.SysFont("Arial", 60)
 font_medium = pygame.font.SysFont("Arial", 40)
 font_small = pygame.font.SysFont("Arial", 28)
 
 clock = pygame.time.Clock()
 
-# Sounds
+# sounds
 try:
     correct_sound = pygame.mixer.Sound("correct.wav")
     wrong_sound = pygame.mixer.Sound("wrong.wav")
@@ -37,7 +36,7 @@ except:
     correct_sound = pygame.mixer.Sound(buffer=bytearray([128] * 1000))
     wrong_sound = pygame.mixer.Sound(buffer=bytearray([128] * 1000))
 
-# Word lists
+# Words to choose from
 EASY_WORDS = ["python", "loop", "list", "print", "true", "false", "open", "if", "else", "for", "def", "and", "or", "not", "min", "max", "file", "code", "math", "join", "name", "input", "zip", "break", "with"]
 MEDIUM_WORDS = ["function", "return", "global", "import", "append", "remove", "index", "range", "lambda", "filter", "sorted", "format", "escape", "integer", "except", "binary", "syntax", "object", "method", "class", "string", "float", "assert", "debug", "module"]
 HARD_WORDS = ["inheritance", "polymorphism", "encapsulation", "abstraction", "comprehension", "constructor", "destructor", "recursion", "asynchronous", "decorator", "generator", "algorithm", "enumerate", "serialization", "multithreading", "superclass", "namespace", "overloading", "interpreter", "expression", "comparator", "dictionary", "exception", "subclass", "operator"]
